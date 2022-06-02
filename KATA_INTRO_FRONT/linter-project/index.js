@@ -1,6 +1,6 @@
 
 const name1 = 'hola'
-const age = 28
+const age = 26
 
 const isLive  = true
 const isLive1  = false
