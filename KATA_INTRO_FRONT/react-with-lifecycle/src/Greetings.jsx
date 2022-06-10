@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 
 export default class Greetings extends Component {
+  componentDidMount() {
+    console.log("SIMULa LLAMADA A LA API DE STAR WARS ");
+  }
+
   componentWillUnmount() {
-    alert("Se va a remover el componente");
+    console.log("Se va a remover el componente");
   }
 
   render() {
