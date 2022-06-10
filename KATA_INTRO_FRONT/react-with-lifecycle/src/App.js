@@ -17,10 +17,12 @@ class App extends Component {
     this.setState({ age: inputParam });
   }
 
+  // RENDERIZADO POR MEDIO DE CONDICION IF -> JS
   showAgeInfo() {
     if (this.state.age >= 18) {
       return <Greetings />;
     }
+    // ESTE return 👇🏽 sustituye al else
     return <NoAccess />;
   }
 
@@ -35,8 +37,11 @@ class App extends Component {
             value={this.state.age}
             onChange={(event) => this.handleInputValue(event.target.value)}
           />
+          {/* CONDITIONAL IF */}
+          {/* {this.state.age >= 18 && <Greetings />} */}
 
-          {this.showAgeInfo()}
+          {/* TERNARIO  Condicion ? Verdadero - ejecuta esto : Falso va a ejecutar esto  */}
+          {this.state.age >= 18 ? <Greetings /> : <NoAccess />}
         </header>
       </div>
     );
