@@ -42,6 +42,13 @@ class App extends Component {
 
           {/* TERNARIO  Condicion ? Verdadero - ejecuta esto : Falso va a ejecutar esto  */}
           {this.state.age >= 18 ? <Greetings /> : <NoAccess />}
+
+          {/* age >= 18  mayor de edad > 12 = adolescente < niñ@  */}
+          {/* TERNARIO Condicion 
+                      ? Verdadero 
+                      : Condicion 
+                      ? Verdadero - ejecuta esto 
+                      : Falso va a ejecutar esto */}
         </header>
       </div>
     );
