@@ -41,7 +41,7 @@ class App extends Component {
           {/* {this.state.age >= 18 && <Greetings />} */}
 
           {/* TERNARIO  Condicion ? Verdadero - ejecuta esto : Falso va a ejecutar esto  */}
-          {this.state.age >= 18 ? <Greetings /> : <NoAccess />}
+          {/* {this.state.age >= 18 ? <Greetings /> : <NoAccess />} */}
 
           {/* age >= 18  mayor de edad > 12 = adolescente < niñ@  */}
           {/* TERNARIO Condicion 
@@ -49,6 +49,14 @@ class App extends Component {
                       : Condicion 
                       ? Verdadero - ejecuta esto 
                       : Falso va a ejecutar esto */}
+
+          {this.state.age >= 18 ? (
+            <Greetings />
+          ) : this.state.age < 18 && this.state.age >= 12 ? (
+            <NoAccess />
+          ) : (
+            <h5> Estas muy pequeño ☹️</h5>
+          )}
         </header>
       </div>
     );
