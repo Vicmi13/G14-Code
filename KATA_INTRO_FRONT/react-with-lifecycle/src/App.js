@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   handleInputValue(inputParam) {
-    console.log("inputParam", inputParam);
+    this.setState({ age: inputParam });
   }
 
   render() {
