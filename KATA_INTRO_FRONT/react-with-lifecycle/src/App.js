@@ -1,5 +1,7 @@
 import { Component } from "react";
 import "./App.css";
+import Greetings from "./Greetings";
+import NoAccess from "./NoAccess";
 
 class App extends Component {
   state = {
@@ -15,6 +17,13 @@ class App extends Component {
     this.setState({ age: inputParam });
   }
 
+  showAgeInfo() {
+    if (this.state.age >= 18) {
+      return <Greetings />;
+    }
+    return <NoAccess />;
+  }
+
   render() {
     return (
       <div className="App">
@@ -26,6 +35,8 @@ class App extends Component {
             value={this.state.age}
             onChange={(event) => this.handleInputValue(event.target.value)}
           />
+
+          {this.showAgeInfo()}
         </header>
       </div>
     );
