@@ -97,7 +97,10 @@ class App extends Component {
 
           {/* CONDITIONAL IF  */}
           {this.state.characterId > 0 && (
-            <CharacterCard id={this.state.characterId} />
+            <CharacterCard
+              id={this.state.characterId}
+              userName={this.state.name}
+            />
           )}
         </header>
       </div>

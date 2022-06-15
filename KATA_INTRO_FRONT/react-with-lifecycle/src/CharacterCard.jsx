@@ -8,6 +8,7 @@ export default class CharacterCard extends Component {
   state = {
     infoUser: {},
   };
+
   componentDidMount() {}
 
   // previous
@@ -36,7 +37,7 @@ export default class CharacterCard extends Component {
       <div className="card">
         <h3>Información personaje</h3>
 
-        <InfoExtra />
+        <InfoExtra userInApp={this.props.userName} />
       </div>
     );
 
