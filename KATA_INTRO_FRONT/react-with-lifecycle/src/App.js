@@ -9,6 +9,7 @@ class App extends Component {
     name: "Victor",
     age: 29,
     peopleArray: [],
+    characterId: null,
   };
 
   componentDidMount() {
@@ -34,6 +35,13 @@ class App extends Component {
     }
     // ESTE return 👇🏽 sustituye al else
     return <NoAccess />;
+  }
+
+  selectCharacter(id) {
+    this.setState({ ...this.state, characterId: id }, () => {
+      // Este callback se ejecuta hasta que alla terminado de setear los nuevos values
+      console.log("state", this.state);
+    });
   }
 
   render() {
@@ -76,7 +84,11 @@ class App extends Component {
               {this.state.peopleArray.map((value, index) => (
                 // <Fragment></Fragment> se puede sustituir por 👇🏽
                 <>
-                  <li key={index}>{`${value.name} - ${value.gender}`}</li>
+                  <li
+                    key={index}
+                    style={{ cursor: "pointer", color: "red" }}
+                    onClick={() => this.selectCharacter(index + 1)}
+                  >{`${value.name} - ${value.gender}`}</li>
                 </>
               ))}
             </ul>
