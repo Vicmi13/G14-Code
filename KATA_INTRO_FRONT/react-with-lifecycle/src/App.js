@@ -3,13 +3,14 @@ import "./App.css";
 import Greetings from "./Greetings";
 import NoAccess from "./NoAccess";
 import axios from "axios";
+import CharacterCard from "./CharacterCard";
 
 class App extends Component {
   state = {
     name: "Victor",
     age: 29,
     peopleArray: [],
-    characterId: null,
+    characterId: 0,
   };
 
   componentDidMount() {
@@ -92,6 +93,11 @@ class App extends Component {
                 </>
               ))}
             </ul>
+          )}
+
+          {/* CONDITIONAL IF  */}
+          {this.state.characterId > 0 && (
+            <CharacterCard id={this.state.characterId} />
           )}
         </header>
       </div>
