@@ -41,7 +41,7 @@ class App extends Component {
   selectCharacter(id) {
     this.setState({ ...this.state, characterId: id }, () => {
       // Este callback se ejecuta hasta que alla terminado de setear los nuevos values
-      console.log("state", this.state);
+      // console.log("state", this.state);
     });
   }
 
