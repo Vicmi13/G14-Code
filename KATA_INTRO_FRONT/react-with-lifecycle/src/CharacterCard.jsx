@@ -29,6 +29,16 @@ export default class CharacterCard extends Component {
   componentWillUnmount() {}
 
   render() {
-    return <div>Que onda 🤖 {this.props.id}</div>;
+    return <div className="title">Que onda 🤖 {this.props.id}</div>;
+
+    /* EJERCICIO
+
+    A través de un archivo.css mostrar en un card
+    los sigs datos del personaje de SWAPi
+    name
+    height
+    films
+    starships (en caso de tener solo mostrar el último elemento)
+    */
   }
 }
