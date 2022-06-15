@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "./CharacterCars.css";
+import InfoExtra from "./InfoExtra";
+
 export default class CharacterCard extends Component {
   state = {
-    infUser: {},
+    infoUser: {},
   };
   componentDidMount() {}
 
@@ -29,7 +32,13 @@ export default class CharacterCard extends Component {
   componentWillUnmount() {}
 
   render() {
-    return <div className="title">Que onda 🤖 {this.props.id}</div>;
+    return (
+      <div className="card">
+        <h3>Información personaje</h3>
+
+        <InfoExtra />
+      </div>
+    );
 
     /* EJERCICIO
 
