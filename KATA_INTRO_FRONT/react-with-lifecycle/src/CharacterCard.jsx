@@ -2,19 +2,15 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class CharacterCard extends Component {
-  componentDidMount() {
-    // axios
-    //   .get(`https://swapi.dev/api/people/${this.props.id}`)
-    //   .then((response) => {
-    //     console.log("ID info", response.data);
-    //   })
-    //   .catch((error) => console.log("error al recuperarId", error));
-  }
+  state = {
+    infUser: {},
+  };
+  componentDidMount() {}
 
   // previous
   componentDidUpdate(prevProps, prevState) {
-    console.log("prevProps id", prevProps.id);
-    console.log("props id", this.props.id);
+    // console.log("prevProps id", prevProps.id);
+    // console.log("props id", this.props.id);
 
     // Validar SI prevProps.id != this.props.id
     if (prevProps.id !== this.props.id) {
@@ -22,12 +18,12 @@ export default class CharacterCard extends Component {
       axios
         .get(`https://swapi.dev/api/people/${this.props.id}`)
         .then((response) => {
+          // Guardar en un estado esta info
           console.log("ID info", response.data);
+          this.setState({ infoUser: response.data });
         })
         .catch((error) => console.log("error al recuperarId", error));
     }
-
-    // Guardar en un estado esa info
   }
 
   componentWillUnmount() {}
