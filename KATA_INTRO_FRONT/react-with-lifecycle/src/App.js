@@ -14,7 +14,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("Se jecuta una sola vez");
+    console.log("Se ejecuta una sola vez");
     axios
       // regresa una promesa
       .get("https://swapi.dev/api/people")
@@ -63,11 +63,13 @@ class App extends Component {
           {/* {this.state.age >= 18 ? <Greetings /> : <NoAccess />} */}
 
           {/* age >= 18  mayor de edad > 12 = adolescente < niñ@  */}
-          {/* TERNARIO Condicion 
-                      ? Verdadero 
-                      : Condicion 
-                      ? Verdadero - ejecuta esto 
-                      : Falso va a ejecutar esto */}
+          {/* SINTAXIS TERNARIO: 
+            Condicion 
+            ? Verdadero 
+            : Condicion 
+            ? Verdadero - ejecuta esto 
+            : Falso va a ejecutar esto 
+          */}
 
           {this.state.age >= 18 ? (
             <Greetings />
@@ -83,14 +85,12 @@ class App extends Component {
           ) : (
             <ul>
               {this.state.peopleArray.map((value, index) => (
-                // <Fragment></Fragment> se puede sustituir por 👇🏽
-                <>
-                  <li
-                    key={index}
-                    style={{ cursor: "pointer", color: "red" }}
-                    onClick={() => this.selectCharacter(index + 1)}
-                  >{`${value.name} - ${value.gender}`}</li>
-                </>
+                // <Fragment></Fragment> se puede sustituir por 👉🏽 <></>
+                <li
+                  key={index}
+                  style={{ cursor: "pointer", color: "red" }}
+                  onClick={() => this.selectCharacter(index + 1)}
+                >{`${value.name} - ${value.gender}`}</li>
               ))}
             </ul>
           )}
@@ -100,6 +100,8 @@ class App extends Component {
             <CharacterCard
               id={this.state.characterId}
               userName={this.state.name}
+              ageProp={this.state.age}
+              idStarWarCharac={this.state.characterId}
             />
           )}
         </header>

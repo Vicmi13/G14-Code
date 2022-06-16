@@ -9,12 +9,14 @@ export default class CharacterCard extends Component {
     infoUser: {},
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    // ERROR no se ejecuta el primer personaje que se selecciona
+  }
 
   // previous
   componentDidUpdate(prevProps, prevState) {
-    // console.log("prevProps id", prevProps.id);
-    // console.log("props id", this.props.id);
+    console.log("prevProps id", prevProps.id);
+    console.log("props id", this.props.id);
 
     // Validar SI prevProps.id != this.props.id
     if (prevProps.id !== this.props.id) {
@@ -35,9 +37,44 @@ export default class CharacterCard extends Component {
   render() {
     return (
       <div className="card">
-        <h3>Información personaje</h3>
+        <h3>Información del personaje</h3>
+        {Object.values(this.state.infoUser).length > 0 && (
+          <>
+            <p>Name: {this.state.infoUser.name}</p>
+            <p>Height: {this.state.infoUser.height}</p>
+            <ul>
+              {this.state.infoUser.films.map((value, index) => (
+                <li key={index}>
+                  Film {index + 1}-{value}
+                </li>
+              ))}
+            </ul>
+            {/* <p>
+              Starships:{" "}
+              {
+                this.state.infoUser.starships[
+                  this.state.infoUser.starships.length - 1
+                ]
+              }
+            </p> */}
 
-        <InfoExtra userInApp={this.props.userName} />
+            {/* 
+            Otra alternativa 👇🏽*/}
+            <p>
+              Starships2:{" "}
+              {this.state.infoUser.starships.length > 0
+                ? this.state.infoUser.starships[
+                    this.state.infoUser.starships.length - 1
+                  ]
+                : "No tiene ninguna 😢"}
+            </p>
+          </>
+        )}
+        <InfoExtra
+          userInApp={this.props.userName}
+          ageUser={this.props.ageProp}
+          idCharacter={this.props.idStarWarCharac}
+        />
       </div>
     );
 
