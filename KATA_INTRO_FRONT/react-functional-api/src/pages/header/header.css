@@ -1,0 +1,13 @@
+nav {
+  min-height: 80px;
+  font-size: 25px;
+  background-color: whitesmoke;
+  color: rgb(236, 150, 37);
+}
+
+.nav-links {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}

@@ -1,5 +1,13 @@
 import React from "react";
+import "./header.css";
 
 export default function Header() {
-  return <h3>Aqui va el header</h3>;
+  return (
+    <nav>
+      <ul className="nav-links">
+        <li>/</li>
+        <li>User screen</li>
+      </ul>
+    </nav>
+  );
 }
