@@ -4,6 +4,7 @@ import { UsersScreen } from "./pages/usersScreen/UsersScreen";
 import { UsersScreen as UserInput } from "./pages/usersScreeen2/UsersScreen";
 import Header from "./pages/header/Header";
 import Footer from "./pages/footer/Footer";
+import User from "./pages/user/User";
 
 const App = () => {
   // const [test, settest] = useState("");
@@ -26,7 +27,9 @@ const App = () => {
           }
         />
 
-        <Route path="user-screen" element={<UserInput />} />
+        <Route path="user-screen" element={<UserInput />}>
+          <Route path=":id" element={<User />} />
+        </Route>
       </Routes>
       <Footer />
     </Router>
