@@ -37,7 +37,6 @@ export const UsersScreen = ({ sendIdUser, nameProp }) => {
 
   return (
     <div className="App App-header">
-      <img src={logo} className="App-logo" alt="logo" />
       {users.map((user) => (
         <p key={user.id} onClick={() => sendIdUser(user.id, 40)}>
           {user.name}
