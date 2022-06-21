@@ -1,5 +1,7 @@
-import { UsersScreen } from "./pages/usersScreen/UsersScreen";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+
+import { UsersScreen } from "./pages/usersScreen/UsersScreen";
+import { UsersScreen as UserInput } from "./pages/usersScreeen2/UsersScreen";
 
 const App = () => {
   // const [test, settest] = useState("");
@@ -19,6 +21,8 @@ const App = () => {
             />
           }
         />
+
+        <Route path="user-screen" element={<UserInput />} />
       </Routes>
     </Router>
   );
