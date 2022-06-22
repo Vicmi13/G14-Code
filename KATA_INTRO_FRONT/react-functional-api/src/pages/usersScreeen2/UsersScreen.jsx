@@ -6,7 +6,7 @@ export const UsersScreen = () => {
   const [username, setusername] = useState("");
 
   const handleMouseMove = (e) => {
-    console.log(e.clientX, e.clientY);
+    // console.log(e.clientX, e.clientY);
   };
 
   useEffect(() => {

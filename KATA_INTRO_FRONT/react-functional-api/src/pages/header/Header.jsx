@@ -11,7 +11,7 @@ export default function Header() {
           <li>Home</li>
         </Link>
 
-        <Link to="user-screen">
+        <Link to="users">
           <li>User screen</li>
         </Link>
       </ul>
