@@ -40,7 +40,7 @@ export const UsersScreen = ({ sendIdUser, nameProp }) => {
     <div className="App App-header">
       {users.map((user) => (
         <p key={user.id} onClick={() => sendIdUser(user.id, 40)}>
-          {user.name}
+          <Link to={`${user.id}`}>{user.name}</Link>
         </p>
       ))}
     </div>
